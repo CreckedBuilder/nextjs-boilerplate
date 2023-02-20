@@ -7,5 +7,3 @@ export const MEMO_PROGRAM_ID = new PublicKey(
   "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"
 );
 export const NONCE = "403265f0a783981524204603a5923dfc35fae665"; // Just for demo, this should be generated
-export const GREEN_TOKEN = "HAQRdMieVYdhjp6Viy3Qf14cxFovQDBkxeFvYDjxyGQ6";
-export const RED_TOKEN = "2iW48NiTaNgLw2ikviMw3XZR2M4tc1sgZjqMWaeKRjuD";

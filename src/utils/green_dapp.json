@@ -1,0 +1,179 @@
+{
+  "version": "0.1.0",
+  "name": "green_dapp",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "signerGreenTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "greenTokenAccountVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mintGreen",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "signerRedTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "redTokenAccountVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mintRed",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "cityState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "cityName",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "withdrawFromTokenAccount",
+      "accounts": [
+        {
+          "name": "signer",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "takerDepositTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "greenTokenAccountVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "redTokenAccountVault",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "cityState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mintGreen",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mintRed",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "CityState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "initializerKey",
+            "type": "publicKey"
+          },
+          {
+            "name": "greenMintKey",
+            "type": "publicKey"
+          },
+          {
+            "name": "redMintKey",
+            "type": "publicKey"
+          },
+          {
+            "name": "cityName",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "MintAccountMismatch",
+      "msg": "Mint account mismatch"
+    },
+    {
+      "code": 6001,
+      "name": "OwnerAccountMismatch",
+      "msg": "owner account mismatch"
+    },
+    {
+      "code": 6002,
+      "name": "CityNameTooLong",
+      "msg": "The provided city name should be 50 characters long maximum."
+    },
+    {
+      "code": 6003,
+      "name": "NotEnoughGreenTokens",
+      "msg": "The city doesn't have the amount of green tokens it tried to withdraw"
+    },
+    {
+      "code": 6004,
+      "name": "NotEnoughGreenTokenPercentage",
+      "msg": "The city does not have the necessary amount of green tokens in relation to red tokens"
+    }
+  ],
+  "metadata": {
+    "address": "43wWGRGGehT2SuNzfC1CBwgjLEZC1uBY8fB6KXAB5HGE"
+  }
+}
